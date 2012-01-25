@@ -1,7 +1,7 @@
 {
   "name": "What HN says",
   "description": "Shows the current page score. Click on icon to see discussion in Hacker News.",
-  "version": "0.1",
+  "version": "0.2",
   "background_page": "background.html",
   "icons": {
     "48": "icon_48x48.png",
