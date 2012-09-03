@@ -5,5 +5,6 @@ What HN says
 A Google Chrome extension that shows the current page score in Hacker News.
 You can also click on the extension icon to see the discussion page.
 
-[Click here](https://github.com/downloads/fjsj/What-HN-says/What-HN-says.crx) to download it! And feel free to fork it.
+[Download it for free via Chrome Web Store](https://chrome.google.com/webstore/detail/claakfcablnjpapfkgfljfoaphbicdnf)!
 
+If you know Javascript, feel free to fork it, make improvements and send pull requests.
