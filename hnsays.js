@@ -80,7 +80,7 @@ chrome.webNavigation.onCompleted.addListener(function(details) {
       if (story) {
         updateIcon(story.points, tabId);
         var storyObj = {};
-        storyObj[tabId.toString()] = story;
+        storyObj[url] = story;
         chrome.storage.local.set(storyObj, function() {
           if (chrome.runtime.lastError) {
             //console.log(chrome.runtime.lastError);
@@ -98,12 +98,12 @@ chrome.webNavigation.onCompleted.addListener(function(details) {
 // Click on page action icon event: opens new tab with HN discussion page
 // http://developer.chrome.com/extensions/pageAction.html#event-onClicked
 chrome.pageAction.onClicked.addListener(function(tab) {
-  var tabIdStr = tab.id.toString();
-  chrome.storage.local.get(tabIdStr, function(result) {
-    var story = result[tabIdStr];
+  var url = tab.url;
+  chrome.storage.local.get(url, function(result) {
+    var story = result[url];
     if (story) {
-      var url = "http://news.ycombinator.com/item?id=" + story.id;
-      chrome.tabs.create({'url': url}, function(tab) {
+      var discussionUrl = "http://news.ycombinator.com/item?id=" + story.id;
+      chrome.tabs.create({'url': discussionUrl}, function(tab) {
         // Tab opened
       });
     }
